@@ -9,7 +9,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.print("Hello and welcome!");
+        //System.out.print("Hei og velkommen!");
 
         Scanner scan = new Scanner(System.in);
         System.out.print("Destinasjon: ");
@@ -27,7 +27,7 @@ public class Main {
 
 
 
-        try{
+        /*try{
         ObjectMapper objectMapper = new ObjectMapper();
         Rute rute1 = new Rute(nyrute.getDestinasjon(), nyrute.getStartpunkt());
         objectMapper.writeValue(new File("rute.json"),rute1);}
@@ -41,7 +41,7 @@ public class Main {
         System.out.println("Fra "+leser.getStartpunkt()+" til "+ leser.getDestinasjon());}
         catch (IOException e){
             System.out.println("Klarer ikke å lese filen du spør etter! " + e);
-        }
+        }*/
 
         FavorittRute rute = new FavorittRute();
         rute.setDestinasjon(destinasjon);

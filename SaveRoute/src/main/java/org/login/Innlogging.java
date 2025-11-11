@@ -31,7 +31,7 @@ public class Innlogging extends Frame {
         //legger inloggins merken i GUIen
         add(logg_innLabel);
 
-        //lager en navn merke iGuien og legger en tastefunskjon for å skrive navnet(brukernavn =navn, logikk
+        //lager en navn merke iGuien og legger en tastefunskjon for å skrive navnet(brukernavn =navn, +logikk
         // feil fra min side)
         JLabel brukernavn_label = new JLabel("Navn: ");
         brukernavn_label.setBounds(30, 150, 400, 25);
@@ -87,6 +87,7 @@ public class Innlogging extends Frame {
                     // innlogging vellyket
                     JOptionPane.showMessageDialog(Innlogging.this,
                             "Du er nå logget inn!");
+                    Innlogging.this.dispose();
                 }else{
                     //innlogging mislyktes
                     JOptionPane.showMessageDialog(Innlogging.this,
@@ -119,4 +120,5 @@ public class Innlogging extends Frame {
 
 
     }
+
 }
