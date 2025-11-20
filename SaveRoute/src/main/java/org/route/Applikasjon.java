@@ -68,7 +68,36 @@ public class Applikasjon {
                     nyrute.setDestinasjon(destinasjon);
                     nyrute.setStartpunkt(startpunkt);
 
+                    System.out.println("Vil du lagre den i favoritt rute ?");
+                    String favoritt_linjer = scan.nextLine();
+
                     scan.close();
+
+                    if (favoritt_linjer.equalsIgnoreCase("ja")){
+                        try{
+                            ObjectMapper objectMapper = new ObjectMapper();
+                            FavorittRute ruteoversikt = new FavorittRute(nyrute.getDestinasjon(), nyrute.getStartpunkt());
+                            objectMapper.writeValue(new File("favoritt_rute.json"),ruteoversikt);}
+                        catch (IOException e){
+                            System.out.println("Klarer ikke å skrive i filen!");
+                        }
+
+                        try{
+                            ObjectMapper objectMapper1 = new ObjectMapper();
+                            FavorittRute leser_rute_oversikt = objectMapper1.readValue(new File("favoritt_rute.json"), FavorittRute.class);
+                            System.out.println("Fra "+leser_rute_oversikt.getStartpunkt()+" til "+ leser_rute_oversikt.getDestinasjon());}
+                        catch (IOException e){
+                            System.out.println("Klarer ikke å lese filen du spør etter! " + e);
+                        }
+                        System.out.println("Favoritt rute lagret");
+                    }
+                    else if (favoritt_linjer.equalsIgnoreCase("nei")) {
+                        System.out.println("Rute ikke lagret!");
+                    }
+                    else{
+                        System.out.println("Noe gikk galt!");
+                    }
+
                     //Her oppretter jeg en forbindelse med databasen
                     DatabaseConnection databaseConnection_Rute = new DatabaseConnection("root"," ");
 
