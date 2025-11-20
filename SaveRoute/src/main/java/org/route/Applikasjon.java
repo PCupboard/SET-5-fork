@@ -51,6 +51,7 @@ public class Applikasjon {
             switch (x) {
                 case 0:
                     System.out.println("Du er nå logget ut!");
+                    System.exit(0);
                     break;
 
                 case 1:
@@ -142,7 +143,7 @@ public class Applikasjon {
                     System.out.println();
                     break;
             }
-            //System.exit(0);
+
 
         }while (x!=0);
 

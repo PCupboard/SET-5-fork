@@ -18,30 +18,12 @@ public class Main {
         System.out.print("Startpunkt: ");
         String startpunkt = scan.nextLine();
 
-
-
+        
 
         Rute nyrute = new Rute();
         nyrute.setDestinasjon(destinasjon);
         nyrute.setStartpunkt(startpunkt);
 
-
-
-        /*try{
-        ObjectMapper objectMapper = new ObjectMapper();
-        Rute rute1 = new Rute(nyrute.getDestinasjon(), nyrute.getStartpunkt());
-        objectMapper.writeValue(new File("rute.json"),rute1);}
-        catch (IOException e){
-            System.out.println("Klarer ikke å skrive i filen!");
-        }
-
-        try{
-        ObjectMapper objectMapper1 = new ObjectMapper();
-        Rute leser = objectMapper1.readValue(new File("rute.json"), Rute.class);
-        System.out.println("Fra "+leser.getStartpunkt()+" til "+ leser.getDestinasjon());}
-        catch (IOException e){
-            System.out.println("Klarer ikke å lese filen du spør etter! " + e);
-        }*/
 
         FavorittRute rute = new FavorittRute();
         rute.setDestinasjon(destinasjon);
